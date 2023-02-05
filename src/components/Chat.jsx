@@ -24,10 +24,11 @@ export default function Chat() {
 
   return (<>
     <div className="border border-primary rounded container-sm" style={{minHeight: '99.9vh'}}>
-      <div className="border border-primary rounded overflow-auto w-100" style={{height: '75vh', marginTop: '1.5vh', marginBottom: '1.5vh'}}>
+      <div className="border border-primary rounded overflow-auto w-100"
+           style={{height: '75vh', marginTop: '1.5vh', marginBottom: '1.5vh'}}>
         <Messages />
       </div>
-      <div className="border border-primary rounded w-100" style={{height: '20.3vh', marginBottom: '1.5vh'}}>
+      <div className="border border-primary rounded w-100" style={{height: '20.27vh', marginBottom: '1.5vh'}}>
         <SendMessage />
       </div>
     </div>

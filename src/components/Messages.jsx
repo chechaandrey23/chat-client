@@ -11,11 +11,14 @@ export default function Messages() {
 
   const addingMessage = useSelector((state) => state.chats.addingMessage);
 
-  //const addUser = useSelector((state) => state.chats.addUser);
-  //const leaveUser = useSelector((state) => state.chats.leaveUser);
+  const bottomRef = useRef(null);
+
+  useLayoutEffect(() => {
+    bottomRef.current?.scrollIntoView({block: "center", behavior: "smooth"});
+  }, [messages, addingMessage]);
 
   return (<>
-    <Container style={{height: '74.41vh'}}>
+    <Container style={{height: '74.17vh'}}>
       {messages.map((item, index) => {
         if(item.type) {
           return (<><MessageSys key={Date.now()}
@@ -33,10 +36,11 @@ export default function Messages() {
                                  message={item.message}/></>)
       })}
       {(messages.length < 1 && addingMessage.length < 1)?<Row className="align-items-center justify-content-center" style={{height: '74.81vh'}}>
-        <Col md='auto'>
+        <Col sm='auto'>
           <h5>{'chat contains no messages!'}</h5>
         </Col>
       </Row>:null}
+      <Row ref={bottomRef}><Col></Col></Row>
     </Container>
   </>)
 }

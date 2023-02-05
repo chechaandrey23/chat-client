@@ -36,10 +36,12 @@ export default function SendMessage() {
       <Row className="align-items-center" style={{height: '20vh'}}>
         <Col sm='9'>
           <Row className="align-items-center" style={{height: '4vh'}}>
-            <Col sm='2' className="align-self-center" style={{textAlign: 'center'}}>
-              <span><Button variant="primary" onClick={() => {setShowModalUpdateUsername(true)}}><span>e</span></Button></span>
+            <Col sm='1' className="align-self-end" style={{textAlign: 'end'}}>
+              <span><Button variant="primary"
+                            onClick={() => {setShowModalUpdateUsername(true)}}
+                            size="sm"><span>e</span></Button></span>
             </Col>
-            <Col sm='10' className="align-self-center" style={{verticalAlign: 'center'}}>
+            <Col sm='auto' className="align-self-center" style={{verticalAlign: 'center'}}>
               <span className="h4">{username}</span>
             </Col>
           </Row>
@@ -52,7 +54,10 @@ export default function SendMessage() {
               })}>
                 <Form.Group as={Row} controlId="formBasicAddMessage">
                   <Col sm="12">
-                    <Form.Control {...register("message")} as="textarea" rows="5" placeholder={'Enter You Message'} isInvalid={!!errors.message} />
+                    <Form.Control {...register("message")} as="textarea"
+                                  placeholder={'Enter You Message'}
+                                  isInvalid={!!errors.message}
+                                  style={{height: '10vh'}}/>
                     <Form.Control.Feedback type="invalid" style={{paddingLeft: '5px'}}>
                       {errors.message?.message}
                     </Form.Control.Feedback>
