@@ -35,7 +35,8 @@ export default function Messages() {
         return (<><MessageAdding key={Date.now()}
                                  message={item.message}/></>)
       })}
-      {(messages.length < 1 && addingMessage.length < 1)?<Row className="align-items-center justify-content-center" style={{height: '74.81vh'}}>
+      {(messages.length < 1 && addingMessage.length < 1)?<Row className="align-items-center justify-content-center"
+                                                              style={{height: 'inherit'}}>
         <Col sm='auto'>
           <h5>{'chat contains no messages!'}</h5>
         </Col>
